@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# User Management Web App (React + TypeScript + JSON-Server)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple, extensible CRUD application built with **React (TypeScript)**, **Material‑UI**, and **JSON‑Server**.  
+This app demonstrates clean architecture, intuitive UI/UX, and ease of extensibility for adding new fields.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- Add, update, delete, and list users
+- Config‑driven form architecture (easy to add new fields)
+- Validation (phone number must be numeric and 10 digits)
+- Cancel button to reset form or exit edit mode
+- Loading indicators during API calls
+- Error and success alerts for clear feedback
+- Responsive, neat UI with Material‑UI cards and typography
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
+Clone the repository:
+git clone https://github.com/your-username/user-crud-app.git (github.com in Bing)  
+cd user-crud-app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Install dependencies:
+npm install
 
-### `npm test`
+Start JSON‑Server (mock backend):
+npx json-server --watch db.json  --port 5001
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start React app:
+npm start
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ## Extensibility
+Adding a new field is simple:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Update types/index.ts:
+export interface User {
+id?: number;
+firstName: string;
+lastName: string;
+phone: string;
+email: string;
+dob?: string; // new field
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Update config/formFields.ts:
+{ name: "dob", label: "Date of Birth", type: "date", required: false }
 
-### `npm run eject`
+The form automatically renders the new field.
+The list can optionally display it — no other changes required.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Demo
+Start JSON‑Server → http://localhost:5001/users
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Open React app → http://localhost:3000
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add, edit, delete users with instant feedback

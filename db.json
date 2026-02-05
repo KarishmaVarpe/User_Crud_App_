@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "c2d4",
+      "firstName": "Karishma1",
+      "lastName": "Varpe",
+      "phone": "8308292240",
+      "email": "karishma23varpe@gmail.com"
+    },
+    {
+      "id": "6430",
+      "firstName": "Nakul",
+      "lastName": "Varpe",
+      "phone": "8308292240",
+      "email": "karishma23varpe@gmail.com"
+    },
+    {
+      "id": "3118",
+      "firstName": "Nakul2",
+      "lastName": "varpe",
+      "phone": "08308292240",
+      "email": "karishma23varpe@gmail.com"
+    }
+  ]
+}
